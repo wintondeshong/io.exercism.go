@@ -5,7 +5,13 @@ import (
 	"unicode"
 )
 
-const testVersion = 2
+const (
+	testVersion        = 2
+	ResponseToQuestion = "Sure."
+	ResponseToYelling  = "Whoa, chill out!"
+	ResponseToSilence  = "Fine. Be that way!"
+	ResponseDefault    = "Whatever."
+)
 
 // Public Methods
 // --------------
@@ -16,18 +22,18 @@ func Hey(s string) string {
 	s = strings.TrimSpace(s)
 
 	if s == "" {
-		return "Fine. Be that way!"
+		return ResponseToSilence
 	}
 
 	if isAllCaps(s) {
-		return "Whoa, chill out!"
+		return ResponseToYelling
 	}
 
 	if strings.HasSuffix(s, "?") {
-		return "Sure."
+		return ResponseToQuestion
 	}
 
-	return "Whatever."
+	return ResponseDefault
 }
 
 // Private Methods
