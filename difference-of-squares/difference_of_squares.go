@@ -7,21 +7,10 @@ func Difference(i int) int {
 }
 
 func SquareOfSums(i int) int {
-	sum := 0
-
-	for x := 1; x <= i; x++ {
-		sum += x
-	}
-
+	sum := (i * (i + 1)) / 2
 	return sum * sum
 }
 
 func SumOfSquares(i int) int {
-	sum := 0
-
-	for x := 1; x <= i; x++ {
-		sum += x * x
-	}
-
-	return sum
+	return i * (i + 1) * (2*i + 1) / 6
 }
